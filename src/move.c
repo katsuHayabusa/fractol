@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 11:44:45 by saichaou          #+#    #+#             */
-/*   Updated: 2023/08/18 16:50:56 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/08/18 17:26:13 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,25 +62,30 @@ int	zoomin(int x, int y,  t_data *img)
 
 int	arrow_move(int key_code, t_data *img)
 {
+	double	dist_x;
+	double	dist_y;
+
+	dist_x = img->x_max - img->x_min;
+	dist_y = img->y_max - img->y_min;
 	if (key_code == 65361)
 	{
-		img->x_min += 0.01;
-		img->x_max += 0.01;
+		img->x_min -= (dist_x / 100);
+		img->x_max -= (dist_x / 100);
 	}
 	if (key_code == 65362)
 	{
-		img->y_min += 0.01;
-		img->y_max += 0.01;
+		img->y_min -= (dist_y / 100);
+		img->y_max -= (dist_y / 100);
 	}
 	if (key_code == 65363)
 	{
-		img->x_min -= 0.01;
-		img->x_max -= 0.01;
+		img->x_min += (dist_x / 100);
+		img->x_max += (dist_x / 100);
 	}
 	if (key_code == 65364)
 	{
-		img->y_min -= 0.01;
-		img->y_max -= 0.01;
+		img->y_min += (dist_y / 100);
+		img->y_max += (dist_y / 100);
 	}
 
 	launch_fract(img);
