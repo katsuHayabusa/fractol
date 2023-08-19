@@ -6,19 +6,22 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:22:41 by saichaou          #+#    #+#             */
-/*   Updated: 2023/08/19 13:39:05 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/08/19 14:56:26 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minilibx-linux/mlx.h"
-#include <unistd.h>
-#include <stdlib.h>
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
-# define	IMG_X	720
-# define	IMG_Y	640
-# define	IT_MAX	200
+# include "../minilibx-linux/mlx.h"
+# include <unistd.h>
+# include <stdlib.h>
 
-typedef struct	s_data {
+# define IMG_X 720
+# define IMG_Y	640
+# define IT_MAX	200
+
+typedef struct s_data {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -43,13 +46,13 @@ typedef struct	s_data {
 	double	dist_y;
 }				t_data;
 
-typedef	struct	p_data {
+typedef struct p_data {
 	int		win_x;
 	int		win_y;
 	int		is_m;
-}				c_data;
+}				t_fract;
 
-void 	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		is_mandelbrot(int x, int y, t_data *img);
 int		is_julia(int x, int y, t_data *img);
 int		color_key(int key_code, t_data *param);
@@ -74,3 +77,4 @@ int		ft_atoi(const char *str);
 int		zoomout(int x, int y, t_data *img);
 int		arrow_move(int key_code, t_data *img);
 int		move(int key_code, int x, int y, t_data *img);
+#endif

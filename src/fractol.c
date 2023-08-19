@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:37:43 by saichaou          #+#    #+#             */
-/*   Updated: 2023/08/11 13:53:16 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/08/19 14:55:26 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	mandelbrot(t_data *img, int shift)
 {
-	c_data	cor;
+	t_fract	cor;
 
 	cor.win_y = 0;
 	while (cor.win_y < IMG_Y)
@@ -37,7 +37,7 @@ void	mandelbrot(t_data *img, int shift)
 
 void	julia(t_data *img, int shift)
 {
-	c_data	cor;
+	t_fract	cor;
 
 	cor.win_y = 0;
 	while (cor.win_y < IMG_Y)
@@ -60,7 +60,7 @@ void	julia(t_data *img, int shift)
 
 void	burning(t_data *img, int shift)
 {
-	c_data	cor;
+	t_fract	cor;
 
 	cor.win_y = 0;
 	while (cor.win_y < IMG_Y)
