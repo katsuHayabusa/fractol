@@ -6,12 +6,11 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:22:41 by saichaou          #+#    #+#             */
-/*   Updated: 2023/08/19 12:49:13 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/08/19 13:39:05 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minilibx-linux/mlx.h"
-#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 

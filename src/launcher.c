@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:23:05 by saichaou          #+#    #+#             */
-/*   Updated: 2023/08/18 16:30:43 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/08/19 13:42:43 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	which_fract(char **str, int argc)
 {
 	if (str[1] == NULL)
 	{
-		printf("Invalid input\n");
-		printf("Fractals :\njulia  mandelbrot  burningship\n");
+		write(1, "Invalid input\n", 14);
+		write(1, "Fractals :\njulia  mandelbrot  burningship\n", 43);
 		return (-1);
 	}
 	if (ft_strncmp(str[1], "mandelbrot", 10) == 0 && argc == 2)
@@ -28,8 +28,8 @@ int	which_fract(char **str, int argc)
 		return (3);
 	else
 	{
-		printf("Invalid input\n");
-		printf("Fractals :\njulia  mandelbrot  burningship\n");
+		write(1, "Invalid input\n", 14);
+		write(1, "Fractals :\njulia  mandelbrot  burningship\n", 43);
 	}
 	return (0);
 }
