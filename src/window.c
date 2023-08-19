@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 13:18:11 by saichaou          #+#    #+#             */
-/*   Updated: 2023/08/11 18:33:19 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/08/19 12:34:01 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	is_mandelbrot(int x, int y, t_data *img)
 	double	c_i;
 
 	c_r = map(*img, x, 'x');
-	c_i = map(*img, y, 'y');;
+	c_i = map(*img, y, 'y');
 	img->z_r = 0;
 	img->z_i = 0;
 	i = 0;
@@ -79,4 +79,3 @@ int	is_burning(int x, int y, t_data *img)
 	}
 	return (i);
 }
-

@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 11:44:45 by saichaou          #+#    #+#             */
-/*   Updated: 2023/08/18 17:26:13 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/08/19 12:37:41 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	zoomout(int x, int y, t_data *img)
 	return (0);
 }
 
-int	zoomin(int x, int y,  t_data *img)
+int	zoomin(int x, int y, t_data *img)
 {
 	double	center_x;
 	double	center_y;
@@ -65,29 +65,26 @@ int	arrow_move(int key_code, t_data *img)
 	double	dist_x;
 	double	dist_y;
 
-	dist_x = img->x_max - img->x_min;
-	dist_y = img->y_max - img->y_min;
 	if (key_code == 65361)
 	{
-		img->x_min -= (dist_x / 100);
-		img->x_max -= (dist_x / 100);
+		img->x_min -= (img->x_max - img->x_min / 100);
+		img->x_max -= (img->x_max - img->x_min / 100);
 	}
 	if (key_code == 65362)
 	{
-		img->y_min -= (dist_y / 100);
-		img->y_max -= (dist_y / 100);
+		img->y_min -= (img->y_max - img->y_min / 100);
+		img->y_max -= (img->y_max - img->y_min / 100);
 	}
 	if (key_code == 65363)
 	{
-		img->x_min += (dist_x / 100);
-		img->x_max += (dist_x / 100);
+		img->x_min += (img->x_max - img->x_min / 100);
+		img->x_max += (img->x_max - img->x_min / 100);
 	}
 	if (key_code == 65364)
 	{
-		img->y_min += (dist_y / 100);
-		img->y_max += (dist_y / 100);
+		img->y_min += (img->y_max - img->y_min / 100);
+		img->y_max += (img->y_max - img->y_min / 100);
 	}
-
 	launch_fract(img);
 	return (0);
 }
