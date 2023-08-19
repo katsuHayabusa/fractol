@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:22:41 by saichaou          #+#    #+#             */
-/*   Updated: 2023/08/18 16:44:53 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/08/19 12:49:13 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ typedef struct	s_data {
 	double	y_max;
 	int		zoom;
 	char	**str;
+	double	dist_x;
+	double	dist_y;
 }				t_data;
 
 typedef	struct	p_data {
