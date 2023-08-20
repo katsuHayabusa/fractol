@@ -6,7 +6,7 @@
 #    By: saichaou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/14 17:28:45 by saichaou          #+#    #+#              #
-#    Updated: 2023/08/18 16:22:42 by saichaou         ###   ########.fr        #
+#    Updated: 2023/08/20 13:39:15 by saichaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,5 +55,7 @@ fclean:		clean
 			rm -f ${NAME} && make clean -C minilibx-linux
 
 re:			fclean all
+
+bonus:		all
 
 .PHONY:		all clean fclean re
