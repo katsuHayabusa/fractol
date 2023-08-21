@@ -14,7 +14,7 @@
 
 int	rgb(int r, int g, int b, int shift)
 {
-	shift = shift - '0';
+	shift -= '0';
 	return ((r + shift * 50) << 16 | (g + shift * 50) << 8 | (b + shift * 50));
 }
 
@@ -22,7 +22,6 @@ int	color(int iter, int shift)
 {
 	int	pal[6];
 
-	(void) shift;
 	pal[0] = rgb(135, 206, 235, shift);
 	pal[1] = rgb(46, 204, 113, shift);
 	pal[2] = rgb(255, 127, 80, shift);

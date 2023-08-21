@@ -6,7 +6,7 @@
 #    By: saichaou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/14 17:28:45 by saichaou          #+#    #+#              #
-#    Updated: 2023/08/20 13:39:15 by saichaou         ###   ########.fr        #
+#    Updated: 2023/08/21 15:55:01 by saichaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ OBJS		= $(addprefix $(OBJS_DIR), $(OBJ))
 
 NAME		= fractol
 
-CC			= gcc
+CC			= cc
 
 CFLAGS		= -Wall -Wextra -Werror
 
-LIBS		= minilibx-linux/libmlx_Linux.a -L -I minilibx-linux/mlx.h -lXext -lX11 -lm
+LIBS		= -Lminilibx-linux -lmlx_Linux -I minilibx-linux/mlx.h -lXext -lX11 -lm
 
 MINILIBX	= minilibx-linux/libmlx_Linux.a
 

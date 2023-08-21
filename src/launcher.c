@@ -6,7 +6,7 @@
 /*   By: saichaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:23:05 by saichaou          #+#    #+#             */
-/*   Updated: 2023/08/19 13:42:43 by saichaou         ###   ########.fr       */
+/*   Updated: 2023/08/21 15:45:08 by saichaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	launch_fract(t_data *img)
 		}
 		else
 		{
-			img->julia_x = ft_atod(img->str[2]);
-			img->julia_y = ft_atod(img->str[3]);
+			img->julia_x = ft_atod(img->str[3]);
+			img->julia_y = ft_atod(img->str[2]);
 			julia(img, img->shift);
 		}
 	}
@@ -69,13 +69,17 @@ void	launcher(char **str, int argc)
 	img.shift = 48;
 	img.zoom = 1;
 	img.mlx = mlx_init();
+	if (!img.mlx)
+		exit(1);
 	img.mlx_win = mlx_new_window(img.mlx, IMG_X, IMG_Y, "Fractol");
+	if (!img.mlx_win)
+		exit(2);
 	img.img = mlx_new_image(img.mlx, IMG_X, IMG_Y);
+	if (!img.img)
+		exit(3);
 	img.addr = mlx_get_data_addr(img.img,
 			&img.bits_per_pixel, &img.line_length, &img.endian);
-	launch_fract(&img);
-	mlx_hook(img.mlx_win, 2, 1L << 0, color_key, &img);
-	mlx_hook(img.mlx_win, 17, 1L << 0, mouse_destroy, &img);
-	mlx_mouse_hook(img.mlx_win, zoom, &img);
-	mlx_loop(img.mlx);
+	(launch_fract(&img), mlx_hook(img.mlx_win, 2, 1L << 0, color_key, &img),
+		mlx_hook(img.mlx_win, 17, 1L << 0, mouse_destroy, &img),
+		mlx_mouse_hook(img.mlx_win, zoom, &img), mlx_loop(img.mlx));
 }
